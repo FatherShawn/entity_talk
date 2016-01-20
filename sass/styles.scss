@@ -25,7 +25,7 @@ textarea {
 }
 
 html {
-  font-size: 1.25em;
+  font-size: 1.5em;
 }
 body {
   font-weight: 200;
@@ -105,12 +105,14 @@ Global Styles
 */
 .slide {
   display: block;
+  opacity: 1;
   width: $slide_width;
   height: $slide_height;
   border: 4px solid #00aef0;
   color: $text;
   background: url("/images/DP_Logo_square.jpg") no-repeat;
   background-position: top right;
+  //background-color: white;
 }
 
 div.slide-text {
@@ -132,24 +134,33 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Headers
+ */
 h1, h2 {
   color: #00aeef;
+  text-align: center;
 }
 
 h1 {
   font-style: normal;
   font-weight: 900;
-  font-size: 3.998em;
+  font-size: 2.441em;
   line-height: 1.4;
   margin-bottom: 10px;
 }
 
 h2 {
-  font-size: 2.827em;
+  font-size: 1.953em;
   line-height: 1.2;
   margin-bottom: 10px;
   font-style: normal;
   font-weight: 300;
+}
+
+/* Lists
+ */
+ul {
+  list-style-type: square;
 }
 /*
 Footer
@@ -157,14 +168,12 @@ Footer
 div#license {
   position: absolute;
   bottom: 0.5em;
-  $current_width: 711px;
+  $current_width: 694px;
   left: ($slide_width - $current_width)/2;
 }
 #license .footer-text {
   margin-left: 1em;
-  font-size: 0.707em;
+  font-size: 0.64em;
 }
 
-#license img {
-  vertical-align: middle;
-}
+@import "slides/datacontainer";
