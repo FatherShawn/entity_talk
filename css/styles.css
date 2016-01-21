@@ -84,8 +84,8 @@ Global Styles
 .slide {
   display: block;
   opacity: 1;
-  width: 1000px;
-  height: 1000px;
+  width: 700px;
+  height: 700px;
   border: 4px solid #00aef0;
   color: #333333;
   background: url("/images/DP_Logo_square.jpg") no-repeat;
@@ -97,7 +97,7 @@ div.slide-text {
 
 .centered {
   text-align: center;
-  margin-top: 250px; }
+  margin-top: 175px; }
 
 a {
   color: #2ec6ff;
@@ -137,7 +137,7 @@ Footer
 div#license {
   position: absolute;
   bottom: 0.5em;
-  left: 153px; }
+  left: 3px; }
 
 #license .footer-text {
   margin-left: 1em;
@@ -146,5 +146,5 @@ div#license {
 .slide div.data-container {
   float: right; }
   .slide div.data-container img {
-    height: 860px;
+    height: 560px;
     margin-right: 15px; }
