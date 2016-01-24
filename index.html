@@ -9,100 +9,110 @@
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
-    <div id="impress">
-        <div id="overview" class="step" data-x="-1000" data-y="-1000" data-scale="4"></div>
-        <div id="title" class="step slide" data-x="-1000" data-y="-1000" data-scale="3">
-            <div class="slide-text centered">
-                <h1>Entities</h1>
-                <h2>From Core to Custom</h2>
-                <p>Shawn Duncan, Technical Architect</p>
-                <p>Digital Pulp</p>
-            </div>
-            <div id="license">
-                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><span class="footer-text">This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
-            </div>
+<div id="impress">
+    <div id="overview" class="step" data-x="-1000" data-y="-1000" data-scale="4"></div>
+    <div id="title" class="step slide" data-x="-1000" data-y="-1000" data-scale="3">
+        <div class="slide-text centered">
+            <h1>Entities</h1>
+            <h2>From Core to Custom</h2>
+            <p>Shawn Duncan, Technical Architect</p>
+            <p>Digital Pulp</p>
         </div>
-        <div id="data-container" class="step slide" data-x="-1000" data-y="-3150" data-scale="1">
-            <div class="slide-text centered">
-                <h1>The Idea of a Data Container</h1>
-            </div>
+        <div id="license">
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License"
+                                                                                     src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a><span
+                class="footer-text">This work is licensed under a <a rel="license"
+                                                                     href="http://creativecommons.org/licenses/by/4.0/">Creative
+            Commons Attribution 4.0 International License</a>.</span>
         </div>
-        <div class="step slide" data-x="-1350" data-y="-3150" data-z="-350" data-rotate-y="-90">
-            <h2>The Idea of a Data Container</h2>
-            <div class="data-container"><img src="images/container_ship_cropped.jpg"></div>
-            <div class="slide-text">
-                <ul>
-                    <li>An object that stores information.</li>
+    </div>
+    <div id="data-container" class="step slide" data-x="-1000" data-y="-3150" data-scale="1">
+        <div class="slide-text centered">
+            <h1>The Idea of a Data Container</h1>
+        </div>
+    </div>
+    <div class="step slide" data-x="-1350" data-y="-3150" data-z="-350" data-rotate-y="-90">
+        <h2>The Idea of a Data Container</h2>
+        <div class="data-container"><img src="images/container_ship_cropped.jpg"></div>
+        <div class="slide-text">
+            <ul>
+                <li>An object that stores information.
                     <ul>
                         <li>Content</li>
                         <li>Configuration</li>
                     </ul>
-                </ul>
-            </div>
+                </li>
+            </ul>
         </div>
-        <div class="step slide" data-x="-1000" data-y="-3500" data-z="-350" data-rotate-x="90">
-            <h2>The Idea of a Data Container</h2>
-            <div class="slide-text">
-                <ul>
-                    <li>No actual Entity Class in D7 core.</li>
-                    <li>PHP Standard Objects</li>
+    </div>
+    <div class="step slide" data-x="-1000" data-y="-3500" data-z="-350" data-rotate-x="90">
+        <h2>The Idea of a Data Container</h2>
+        <div class="slide-text">
+            <ul>
+                <li>No actual Entity Class in D7 core.</li>
+                <li>PHP Standard Objects
                     <ul>
                         <li>Node</li>
                         <li>User</li>
                         <li>Taxonomy</li>
                         <li>Comments</li>
                     </ul>
-                </ul>
-            </div>
-        </div>
-        <div class="step slide" data-x="-650" data-y="-3150" data-z="-350" data-rotate-y="90">
-            <h2>The Idea of a Data Container</h2>
-            <div class="slide-text">
-                <ul>
-                    <li>In Drupal 8, Entities are first class objects</li>
-                    <li>Content
-                        <dl>
-                            <dt><em>\Drupal\Core\Entity\ContentEntityBase</em></dt>
-                            <dd><code>abstract class ContentEntityBase extends Entity implements \IteratorAggregate, ContentEntityInterface</code></dd>
-                        </dl>
-                    </li>
-                    <li>Configuration
-                        <dl>
-                            <dt><em>\Drupal\Core\Config\Entity\ConfigEntityBase</em></dt>
-                            <dd><code>abstract class ConfigEntityBase extends Entity implements ConfigEntityInterface</code></dd>
-                        </dl>
-                    </li>
-                    <li><a target="_blank" href="images/Entity.svg">UML</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="core-entities" class="step slide" data-x="1150" data-y="-1000" data-scale="1">
-            <div class="slide-text centered">
-                <h1>Working with Core Entities</h1>
-            </div>
-        </div>
-        <div id="fieldable" class="step slide" data-x="800" data-y="-1000" data-z="-350" data-rotate-y="-90">
-            <h2>Working with Core Entities</h2>
-            <div class="data-diagram"><img src="images/related_data.png"></div>
-            <div class="slide-text">
-                <ul>
-                    <li>If you've been working with Drupal for multiple versions, now is the time to stop thinking in nodes.</li>
-                    <li>Use fields to model your real processes and relationships.</li>
-                </ul>
-            </div>
-        </div>
-        <div id="smarter" class="step slide" data-x="-1000" data-y="1150" data-scale="1">
-            <div class="slide-text centered">
-                <h1>Smarter Modules with Custom Entities</h1>
-            </div>
-        </div>
-        <div id="resources" class="step slide" data-x="-3150" data-y="-1000" data-scale="1">
-            <div class="slide-text centered">
-                <h1>More Resources</h1>
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
-    <script src="js/impress.js"></script>
-    <script>impress().init();</script>
+    <div class="step slide" data-x="-650" data-y="-3150" data-z="-350" data-rotate-y="90">
+        <h2>The Idea of a Data Container</h2>
+        <div class="slide-text">
+            <ul>
+                <li>In Drupal 8, Entities are first class objects</li>
+                <li>Content
+                    <dl>
+                        <dt><em>\Drupal\Core\Entity\ContentEntityBase</em></dt>
+                        <dd><code>abstract class ContentEntityBase extends Entity implements \IteratorAggregate,
+                            ContentEntityInterface</code></dd>
+                    </dl>
+                </li>
+                <li>Configuration
+                    <dl>
+                        <dt><em>\Drupal\Core\Config\Entity\ConfigEntityBase</em></dt>
+                        <dd><code>abstract class ConfigEntityBase extends Entity implements ConfigEntityInterface</code>
+                        </dd>
+                    </dl>
+                </li>
+                <li><a target="_blank" href="images/Entity.svg">UML</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="core-entities" class="step slide" data-x="1150" data-y="-1000" data-scale="1">
+        <div class="slide-text centered">
+            <h1>Working with Core Entities</h1>
+        </div>
+    </div>
+    <div id="fieldable" class="step slide" data-x="800" data-y="-1000" data-z="-350" data-rotate-y="-90">
+        <h2>Working with Core Entities</h2>
+        <div class="data-diagram"><img src="images/related_data.png"></div>
+        <div class="slide-text">
+            <ul>
+                <li>If you've been working with Drupal for multiple versions, now is the time to stop thinking in
+                    nodes.
+                </li>
+                <li>Use fields to model your real processes and relationships.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="smarter" class="step slide" data-x="-1000" data-y="1150" data-scale="1">
+        <div class="slide-text centered">
+            <h1>Smarter Modules with Custom Entities</h1>
+        </div>
+    </div>
+    <div id="resources" class="step slide" data-x="-3150" data-y="-1000" data-scale="1">
+        <div class="slide-text centered">
+            <h1>More Resources</h1>
+        </div>
+    </div>
+</div>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
 </body>
 </html>
