@@ -108,7 +108,7 @@ Global Styles
   opacity: 1;
   width: $slide_width;
   height: $slide_height;
-  border: 4px solid #00aef0;
+  border: 4px solid $dp_blue;
   color: $text;
   background: url("/images/DP_Logo_square.jpg") no-repeat;
   background-position: top right;
@@ -126,7 +126,7 @@ div.slide-text {
 }
 
 a {
-  color: #2ec6ff;
+  color: $link_blue;
   text-decoration: none;
 }
 
@@ -137,7 +137,7 @@ a:hover {
 /* Headers
  */
 h1, h2 {
-  color: #00aeef;
+  color: $dp_blue;
   text-align: center;
 }
 
@@ -177,3 +177,4 @@ div#license {
 }
 
 @import "slides/datacontainer";
+@import "slides/fieldable";

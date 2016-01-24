@@ -109,7 +109,7 @@ a:hover {
 /* Headers
  */
 h1, h2 {
-  color: #00aeef;
+  color: #00aef0;
   text-align: center; }
 
 h1 {
@@ -148,3 +148,9 @@ div#license {
   .slide div.data-container img {
     height: 560px;
     margin-right: 15px; }
+
+#fieldable div.data-diagram {
+  float: right; }
+  #fieldable div.data-diagram img {
+    margin-right: 143.5px;
+    margin-left: 143.5px; }
