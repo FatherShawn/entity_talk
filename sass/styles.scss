@@ -113,16 +113,34 @@ Global Styles
   background: url("/images/DP_Logo_square.jpg") no-repeat;
   background-position: top right;
   background-color: white;
+  img {
+    display: none;
+  }
 }
 
 div.slide-text {
   margin-left: 0.25em;
   margin-right: 0.25em;
+  display: none;
+}
+
+div.slide.active {
+  div.slide-text {
+    display: block;
+  }
+  img {
+    display: inline;
+  }
+}
+
+div.slide-text.centered {
+  display: block;
 }
 
 .centered {
   text-align: center;
   margin-top: 0.25 * $slide_height;
+  display: block;
 }
 
 a {
@@ -144,13 +162,13 @@ h1, h2 {
 h1 {
   font-style: normal;
   font-weight: 900;
-  font-size: 2.441em;
+  font-size: $text_up_four;
   line-height: 1.4;
   margin-bottom: 10px;
 }
 
 h2 {
-  font-size: 1.953em;
+  font-size: $text_up_three;
   line-height: 1.2;
   margin-bottom: 10px;
   font-style: normal;
@@ -183,9 +201,10 @@ div#license {
 }
 #license .footer-text {
   margin-left: 1em;
-  font-size: 0.64em;
+  font-size: $text_down_two;
 }
 
 @import "slides/datacontainer";
 @import "slides/fieldable";
 @import "slides/questions";
+@import "slides/smarter";

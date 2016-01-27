@@ -10,7 +10,7 @@
 </head>
 <body>
 <div id="impress">
-    <div id="overview" class="step" data-x="-1000" data-y="-1000" data-scale="4"></div>
+    <div id="overview" class="step" data-x="-1000" data-y="-1000" data-scale="6"></div>
     <div id="title" class="step slide" data-x="-1000" data-y="-1000" data-scale="3">
         <div class="slide-text centered">
             <h1>Entities</h1>
@@ -125,22 +125,125 @@
             <h1>Smarter Modules with Custom Entities</h1>
         </div>
     </div>
-    <div class="step slide" data-x="-1350" data-y="1150">
-        <h2>Classes, Files and Annotations for Custom Content Entities</h2>
+    <div class="step slide" data-x="-1350" data-y="1150" data-z="-350" data-rotate-y="-90">
+        <h2 class="entity-detail-title">Classes, Files & Annotations<br>for Custom Content Entities</h2>
+        <div class="slide-text">
+            <ul>
+                <li>An entity interface in the <code>/src</code> directory.
+                    <ul>
+                        <li>Conform your entity to multiple types by extending core interfaces.
+                            <ul>
+                                <li><code>ContentEntityInterface</code>
+                                    <br>For obvious reasons...
+                                </li>
+                                <li><code>EntityChangedInterface</code>
+                                    <ul>
+                                        <li>Defines an interface for entity change timestamp tracking.</li>
+                                        <li>Allows more precise cache invalidation.</li>
+                                        <li>Disallows concurrent editing</li>
+                                    </ul>
+                                </li>
+                                <li><code>EntityOwnerInterface</code>
+                                    <br>Allow reassigning entity ownership.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="step slide" data-x="-1000" data-y="800" data-z="-350" data-rotate-x="90">
+        <h2 class="entity-detail-title">Classes, Files & Annotations<br>for Custom Content Entities</h2>
         <div class="slide-text">
             <ul>
                 <li>An entity class at <code>/src/Entity/</code>
                     <ul>
                         <li>extend <code>ContentEntityBase</code></li>
-                        <li>implement <code>DefaultEntityInterface</code></li>
+                        <li>implement the custom interface just discussed.</li>
                         <li><code>@ContentEntityType</code> Annotations
                             <ul>
-                                <li>Refer to <code>\Drupal\Core\Entity\ContentEntityType</code> for properties</li>
+                                <li>Refer to <code>\Drupal\Core\Entity\EntityType</code> for all possible properties
+                                </li>
+                                <li><em>id:</em> The unique identifier of this entityType.</li>
+                                <li><em>label:</em> Human readable name of the entity type</li>
+                                <li><em>handlers:</em> You can use handlers provided by parent or override with your
+                                    own. Implement classes in <code>/src</code> for any overrides.
+                                </li>
+                                <li><em>base_table:</em> Define a unique name for the table used to store the data.</li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-
+            </ul>
+        </div>
+    </div>
+    <div class="step slide" data-x="-650" data-y="1150" data-z="-350" data-rotate-y="90">
+        <h2 class="entity-detail-title">Classes, Files & Annotations<br>for Custom Content Entities</h2>
+        <div class="slide-text">
+            <ul>
+                <li>An entity class at <code>/src/Entity/</code>
+                    <ul>
+                        <li><code>@ContentEntityType</code> Annotations continued...
+                            <ul>
+                                <li><em>fieldable:</em> Can additional fields be added to the entity via the admin UI?
+                                </li>
+                                <li><em>entity_keys:</em> Map entity columns to standard keys.</li>
+                                <li><em>links:</em> Provide routes to do standard tasks.</li>
+                                <li><em>admin_permission:</em> The permission string. Must define in a <code>permissions.yml</code> file.
+                                </li>
+                            </ul>
+                        </li>
+                        <li> implement <code>baseFieldDefinitions</code>
+                            <br>Base fields are fields that exist for every bundle. See: <code class="basefield-info">Drupal\Core\Entity\FieldableEntityInterface</code>.
+                            Note that entities can have base fields without being designated <em>fieldable.</em></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="step slide" data-x="-1000" data-y="1150" data-z="-700" data-rotate-y="180">
+        <h2 class="entity-detail-title">Classes, Files & Annotations<br>for Custom Content Entities</h2>
+        <div class="slide-text">
+            <ul>
+                <li>Customize your entity list by extending <code>EntityListBuilder</code>. Add a <code>list_builder</code> annotation.</li>
+                <li>Handlers you may wish to implement:
+                    <ul>
+                        <li>views_data</li>
+                        <li>forms for add/edit and delete</li>
+                        <li>access (Pair with a <code>permissions.yml</code> file.)</li>
+                        <li>route_provider</li>
+                    </ul>
+                </li>
+                <li>A <code>routing.yml</code> file is not needed if you implement a route provider. <a href="https://www.drupal.org/node/2593577">https://www.drupal.org/node/2593577</a> </li>
+                <li>Yaml files for local tasks, local actions and menu defaults. <a href="https://www.drupal.org/node/2302893">https://www.drupal.org/node/2302893</a> </li>
+            </ul>
+        </div>
+    </div>
+    <div class="step slide" data-x="-1000" data-y="2200">
+        <h2 class="entity-detail-title">Classes, Files & Annotations<br>for Custom Configuration Entities</h2>
+        <div class="slide-text">
+            <ul>
+                <li>Very Similar
+                <ul>
+                    <li>Extending <code>ConfigEntityInterface</code> & <code>ConfigEntityBase</code></li>
+                    <li>Corresponding extensions of ConfigEntity classes for forms and list</li>
+                    <li>Form controllers</li>
+                    <li>Route provider</li>
+                </ul>
+                </li>
+                <li>Need a <code>config/schema/module_name.schema.yml</code> file. This defines the schema for <em>yaml files</em> used to export the entity.</em></li>
+                <li>Each property on the defining class should have a mapping in the <code>schema.yml</code></li>
+            </ul>
+        </div>
+    </div>
+    <div id="secret-sauce" class="step slide" data-x="-1000" data-y="2200" data-z="-1" data-rotate-y="180">
+        <h2>The Secret Sauce</h2>
+        <div class="slide-text">
+            <ul>
+                <li>Drupal Console</li>
+                <li><code>drupal generate:module</code></li>
+                <li><code>drupal generate:entity:content</code></li>
             </ul>
         </div>
     </div>
