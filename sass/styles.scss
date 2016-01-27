@@ -112,7 +112,7 @@ Global Styles
   color: $text;
   background: url("/images/DP_Logo_square.jpg") no-repeat;
   background-position: top right;
-  //background-color: white;
+  background-color: white;
 }
 
 div.slide-text {
@@ -162,6 +162,16 @@ h2 {
 ul {
   list-style-type: square;
 }
+
+dt {
+  color: $dp_blue;
+  font-weight: 200;
+}
+dd {
+  a {
+    color: $dp_magenta;
+  }
+}
 /*
 Footer
 */
@@ -178,3 +188,4 @@ div#license {
 
 @import "slides/datacontainer";
 @import "slides/fieldable";
+@import "slides/questions";

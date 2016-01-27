@@ -89,7 +89,8 @@ Global Styles
   border: 4px solid #00aef0;
   color: #333333;
   background: url("/images/DP_Logo_square.jpg") no-repeat;
-  background-position: top right; }
+  background-position: top right;
+  background-color: white; }
 
 div.slide-text {
   margin-left: 0.25em;
@@ -131,6 +132,13 @@ h2 {
 ul {
   list-style-type: square; }
 
+dt {
+  color: #00aef0;
+  font-weight: 200; }
+
+dd a {
+  color: #EC008B; }
+
 /*
 Footer
 */
@@ -154,3 +162,9 @@ div#license {
   #fieldable div.data-diagram img {
     margin-right: 143.5px;
     margin-left: 143.5px; }
+
+#questions h2 {
+  text-align: center; }
+
+#questions div.slide-text {
+  text-align: center; }
